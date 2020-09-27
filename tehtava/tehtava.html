@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>ehtorakenne if/else</title>
+</head>
+<body>
+  <h2>ehtorakenne if-else</h2>
+
+  hinta: <input type="text" name="hinta" id="hinta"><br>
+  rahat: <input type="text" name="raha" id="raha"><br>
+  <button onClick="ehtorakenne()" id="nappi">OSTA LIHIS</button>
+  <br><br><div id="out"></div>
+
+  <script>
+
+// Ohjelmassa:
+//  - verrataan taskussa olevaa rahamäärää hintaan
+//  - jos rahat riittävät, tulostetaan "Bon appetit!"
+//  - jos rahat eivät riitä, tulostetaan "Paastoa!"
+//  - lopuksi tulostetaan jäljelle jäänyt rahamäärä
+//  - tulosta kaikki tulostus id-tunnisteeseen out
+//  - HUOM! älä vähennä taskussa olevaa rahamäärää, ellei ostosta pystytä suorittamaan
+
+function ehtorakenne() {
+
+      // Haetaan käyttäjän tekstikenttiin syöttämät tiedot.
+      let hinta = document.getElementById("hinta").value;
+      let raha = document.getElementById("raha").value;
+      let out = "";
+
+      // Kirjoita ohjelmakoodi tähän.
+
+      if (hinta > raha)
+      { // ei pysty ostamaan
+        out = "Paastoa!";
+      }
+      else
+      {
+        out = "Bon appetit!";
+        raha -= hinta;
+      }
+      out += "<br>Rahaa taskussa " + raha;
+      document.getElementById("out").innerHTML = out;
+    }
+
+  </script>
+</body>
+</html>
